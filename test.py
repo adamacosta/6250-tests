@@ -54,6 +54,13 @@ class TestNF(unittest.TestCase):
 		correct = __import__('topo7').ans
 		self.assertEqual(ans, correct)
 
+	def test_topo8(self):
+		ans = check_output(["python", "run_topo.py", "topo8", "topo8.log"])
+		ans = ans.split('-----')[-2]
+		ans = ''.join(ans.split('\n'))
+		correct = __import__('topo8').ans
+		self.assertEqual(ans, correct)
+
 	# TODO create more tests
 
 if __name__ == '__main__':
